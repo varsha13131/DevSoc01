@@ -15,7 +15,7 @@ y = df["Price"].values.reshape(-1, 1)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) #random state ensures reproducible results
 
 #Normalizing the data
-X_mean, X_std = X_train.mean(axis=0), X_train.std(axis=0)  #axis=0 averages down the rows, giving one mean and one std per feature column
+X_mean, X_std = X_train.mean(axis=0), X_train.std(axis=0)  #axis=0 averages down the rows, giving one mean and one std per column
 X_std[X_std== 0] = 1   #ensures that division by zero in next step doesn't occur by changing value of any 0 std deviations to 1
 
 y_mean, y_std= y_train.mean(), y_train.std()   #single mean and std of the training prices
